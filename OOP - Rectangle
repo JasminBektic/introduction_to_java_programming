@@ -1,0 +1,39 @@
+public class Rectangle {
+
+	int width;
+	int height;
+		
+	Rectangle() {
+		width = 1;
+		height = 1;
+	}
+	
+	Rectangle(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	int getArea() {
+		return width * height;
+	}
+	
+	int getPerimeter() {
+		return 2 * (width + height);
+	}
+}
+
+
+
+
+
+
+public class TestRectangle {
+
+	public static void main(String[] args) {
+	
+		Rectangle rectangle = new Rectangle(4, 40);
+		System.out.println("Width\t" + "Height\t" + "Area\t" + "Perimeter");
+		System.out.println(rectangle.width + "\t" + rectangle.height + "\t" + rectangle.getArea() + "\t" + rectangle.getPerimeter());
+
+	}
+}
