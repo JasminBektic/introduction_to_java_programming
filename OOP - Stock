@@ -1,0 +1,69 @@
+
+public class Stock {
+
+	String symbol;
+	String name;
+	double previousClosingPrice;
+	double currentPrice;
+
+
+	public Stock(String newSymbol, String newName, double newPreviousClosingPrice, double newCurrentPrice) {
+		symbol = newSymbol;
+		name = newName;
+		previousClosingPrice = newPreviousClosingPrice;
+		currentPrice = newCurrentPrice;
+	}
+	
+	public String getSymbol() {
+		return symbol;
+	}
+	
+	public void setSymbol(String newSymbol) {
+		symbol = newSymbol;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String newName) {
+		name = newName;
+	}
+	
+	public double getPreviousClosingPrice() {
+		return previousClosingPrice;
+	}
+	
+	public void setPreviousClosingPrice(double newPreviousClosingPrice) {
+		previousClosingPrice = newPreviousClosingPrice;
+	}
+	
+	public double getCurrentPrice() {
+		return currentPrice;
+	}
+	
+	public void setCurrentPrice(double newCurrentPrice) {
+		currentPrice = newCurrentPrice;
+	}
+
+	public double getChangePercent(double percent) {
+		percent = Math.abs(previousClosingPrice - currentPrice) / 100;
+		return percent;
+	}
+}
+
+
+
+
+
+
+
+public class TestStock {
+
+	public static void main(String[] args) {
+		
+		Stock myStock = new Stock("ORCL", "Oracle Corporation", 34.5, 34.35);
+		System.out.printf("Price-change percent is: %.4f",  myStock.getChangePercent(0));
+		System.out.print("%");
+	}
+}
