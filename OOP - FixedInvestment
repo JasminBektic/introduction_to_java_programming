@@ -1,0 +1,52 @@
+
+public class FixedInvestment {
+
+	double depositAmount;
+	double annualInterestRate;
+	int numberOfYears;
+
+FixedInvestment() {
+	depositAmount = 1000;
+	annualInterestRate = 5.0;
+	numberOfYears = 1;
+	}
+
+	 FixedInvestment(double depositAmount, double annualInterestRate, int numberOfYears) {
+		this.depositAmount = depositAmount;
+		this.annualInterestRate = annualInterestRate;
+		this.numberOfYears = numberOfYears;
+	}
+	 
+	 public double depositAmount() {
+		 return depositAmount;
+	 }
+	 
+	 public double annualInterestRate() {
+		 return annualInterestRate;
+	 }
+	 
+	 public int numberOfYears() {
+		 return numberOfYears;
+	 }
+	 
+	 public double getTotalReturn() {
+		 return depositAmount * Math.pow(1 + annualInterestRate / 12, numberOfYears * 12);
+	 }
+}
+
+
+
+
+
+
+
+
+public class TestFixedInvestment {
+
+	public static void main(String[] args) {
+		FixedInvestment fixedInvestment = new FixedInvestment(10000, 4.5, 3);
+		System.out.print("Total return after three years is: " + fixedInvestment.getTotalReturn());
+
+	}
+
+}
