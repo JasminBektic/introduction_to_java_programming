@@ -1,0 +1,45 @@
+
+	public class MyPoint {
+		int x;
+		int y;
+
+	MyPoint() {
+		x = 0;
+		y = 0;
+	}
+	
+	public MyPoint(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public double distance(int x1, int y1) {
+		return Math.sqrt(Math.pow((x - x1), 2) + Math.pow((y - y1), 2));
+	}
+}
+
+
+
+
+
+
+
+public class TestMyPoint {
+
+	public static void main(String[] args) {
+		
+		MyPoint myPoint1 = new MyPoint(7, 6);
+		MyPoint myPoint2 = new MyPoint();
+		
+		System.out.println(myPoint1.distance(4, 5));
+		System.out.println(myPoint2.distance(4, 5));
+	}
+}
