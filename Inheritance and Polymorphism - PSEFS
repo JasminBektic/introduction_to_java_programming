@@ -1,0 +1,95 @@
+class Person {
+	public static String name;
+	String adress, phoneNumber, emailAdress;
+	
+	Person(String name) {
+		this.name = name;
+	}
+
+	public String toString() {
+		return "Person\t\t" + name;
+	}
+}
+
+
+
+
+class Student extends Person {
+	
+	private static final String FRESHMAN = "";
+	private static final String SOPHOMORE = "";
+	private static final String JUNIOR = "";
+	private static final String SENIOR = "";
+	
+	public Student() {
+		super(name);
+	}
+	
+	public String toString() {
+		return "Student\t\t" + name;
+	}
+}
+	
+
+
+
+class Employee extends Person {
+
+	private String office;
+	private int salary;
+	private java.util.Date dateHired;
+	
+	public Employee() {
+		super(name);
+		dateHired = new java.util.Date();
+	}
+	
+	public String toString() {
+		return "Employee\t" + name;
+	}
+}
+
+
+
+class Faculty {
+	
+	private int officeHours;
+	private String rank;
+	
+	public String toString() {
+		return "Faculty\t\t" + Person.name;
+	}
+}
+
+
+
+
+class Staff {
+	
+	private String title;
+	
+	public String toString() {
+		return "Staff\t\t" + Person.name;
+	}
+}
+
+
+
+
+public class TestPSEFS {
+
+public static void main(String[] args){
+		
+		Person person = new Person("Ned Stark");
+		Student student = new Student();
+		Employee employee = new Employee();
+		Faculty faculty = new Faculty();
+		Staff staff = new Staff();
+		
+		System.out.println(person.toString());
+		System.out.println(student.toString());
+		System.out.println(employee.toString());
+		System.out.println(faculty.toString());
+		System.out.println(staff.toString());
+	}
+}
