@@ -51,25 +51,31 @@ class Employee extends Person {
 
 
 
-class Faculty {
+class Faculty extends Employee {
 	
 	private int officeHours;
 	private String rank;
 	
+	public Faculty() {
+	}
+	
 	public String toString() {
-		return "Faculty\t\t" + Person.name;
+		return "Faculty\t\t" + name;
 	}
 }
 
 
 
 
-class Staff {
+class Staff extends Employee{
 	
 	private String title;
 	
+	public Staff() {
+	}
+	
 	public String toString() {
-		return "Staff\t\t" + Person.name;
+		return "Staff\t\t" + name;
 	}
 }
 
