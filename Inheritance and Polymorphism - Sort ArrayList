@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Jea {
+public class SortArray {
 
 	public static void main(String[] args) {
 		
@@ -16,7 +16,7 @@ public class Jea {
 	}
 		input.close();
 		
-		Jea.sort(list);
+		SortArray.sort(list);
 		System.out.println(list);
 	}
 	
