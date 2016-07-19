@@ -1,0 +1,85 @@
+
+public class RegularPolygon {
+
+	private int n;
+	private double side, x, y;
+	
+	public RegularPolygon() {
+		n = 3;
+		side = 1;
+		x = 0;
+		y = 0;
+	}
+	
+	public RegularPolygon(int n, double side) {
+		this.n = n;
+		this.side = side;
+	}
+	
+	public RegularPolygon(int n, double side, double x, double y) {
+		this.n = n;
+		this.side = side;
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getN() {
+		return n;
+	}
+	
+	public void setN(int n) {
+		this.n = n;
+	}
+	
+	public double getSide() {
+		return side;
+	}
+	
+	public void setSide(double side) {
+		this.side = side;
+	}
+	
+	public double getX() {
+		return x;
+	}
+	
+	public void setX(double x) {
+		this.x = x;
+	}
+	
+	public double getY() {
+		return y;
+	}
+	
+	public void setY(double y) {
+		this.y = y;
+	}
+	
+	public double getPerimeter() {
+		return n * side;
+	}
+	
+	public double getArea() {
+		return (n * Math.pow(side, 2)) / (4 * Math.tan((Math.PI / n)));
+	}
+}
+
+
+
+
+
+
+public class TestRegularPolygon {
+
+	public static void main(String[] args) {
+		
+		RegularPolygon regularPolygon1 = new RegularPolygon();
+		RegularPolygon regularPolygon2 = new RegularPolygon(6, 4);
+		RegularPolygon regularPolygon3 = new RegularPolygon(10, 4, 5.6, 7.8);
+		
+		System.out.println("Perimeter \tArea");
+		System.out.printf("%4.2f\t\t%4.2f\n", regularPolygon1.getPerimeter(), regularPolygon1.getArea());
+		System.out.printf("%4.2f\t\t%4.2f\n", regularPolygon2.getPerimeter(), regularPolygon2.getArea());
+		System.out.printf("%4.2f\t\t%4.2f\n", regularPolygon3.getPerimeter(), regularPolygon3.getArea());
+	}
+}
