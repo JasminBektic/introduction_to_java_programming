@@ -1,0 +1,56 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class ScoreFile {
+	int sum;
+	double countAverage;
+	
+	public ScoreFile() {	
+	}
+	
+	public void displayScore() throws FileNotFoundException {
+		Scanner input = new Scanner(new File("D:\\scores.txt"));
+		while (input.hasNext()) {
+			int score = input.nextInt();
+			sum += score;
+			countAverage++;
+			System.out.print(score + " ");
+	}
+		input.close();
+}
+	
+	public void sumAndAverage() {
+		double average = sum / countAverage;
+		System.out.print("Score sum: " + sum + "\tScore average: " + average);
+	}
+}
+
+
+
+
+import java.io.*;
+import java.util.Scanner;
+
+public class TestScoreFile {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		ScoreFile score = new ScoreFile();
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Do u want to open this file? \n0 - No\n1 - Yes");
+		int option = input.nextInt();
+		if (option == 0) {
+			System.exit(0);
+	}
+		score.displayScore();
+		
+		System.out.println("\n\nDo u want display of sum and average? \n0 - No\n1 - Yes");
+		option = input.nextInt();
+		input.close();
+		if (option == 0) {
+			System.exit(0);
+	}
+		score.sumAndAverage();
+	}
+}
