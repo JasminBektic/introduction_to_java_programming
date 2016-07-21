@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.util.Random;
+
+public class WriteRead {
+	File file = new File("D:\\Exercise12_15.txt");
+	
+	public WriteRead() {
+	}
+	
+	public void random() throws Exception {
+		Random rand = new Random();
+		
+		if (file.exists()) {
+			System.out.print("File already exists!");
+			System.exit(0);
+		} 
+	
+		PrintWriter output = new PrintWriter(file);
+		for (int i = 0; i < 100; i++) {
+			output.print(rand.nextInt(100) + " ");
+			}
+			output.close();
+	}
+	
+	public void sort() throws Exception {
+		Scanner input = new Scanner(file);
+		ArrayList<Integer> list = new ArrayList<>(100);
+		int value;
+		for (int i = 0; i < 100; i++) {
+			value = input.nextInt();
+			list.add(value);
+	}
+			input.close();
+			
+			Collections.sort(list);
+			System.out.print(list);
+	}
+}
+
+
+
+
+public class TestWriteRead {
+
+	public static void main(String[] args) throws Exception {
+	
+		WriteRead read = new WriteRead();
+		read.random();
+		read.sort();
+	}
+}
