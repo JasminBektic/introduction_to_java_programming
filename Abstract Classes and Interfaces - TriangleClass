@@ -1,0 +1,96 @@
+public abstract class GeometricObject {
+
+	private String color = "white";
+	private boolean filled;
+	private java.util.Date dateCreated;
+	
+
+	protected GeometricObject() {
+		dateCreated = new java.util.Date();
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public boolean isFilled() {
+		return filled;
+	}
+	
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	
+	public java.util.Date getDateCreated() {
+		return dateCreated;
+	}
+	
+	@Override
+	public String toString() {
+		return "Created on " + dateCreated + "\nColor: " + color + " and filled " + filled;
+	}
+	
+	public abstract double getArea();
+	
+	public abstract double getPerimeter();
+	}
+
+
+
+
+
+public class Triangle extends GeometricObject {
+
+	double sideA, sideB, sideC;
+	
+	
+	public Triangle() {
+	}
+
+	public void setSideA(double sideA) {
+		this.sideA = sideA;
+	}
+	
+	public void setSideB(double sideB) {
+		this.sideB = sideB;
+	}
+	
+	public void setSideC(double sideC) {
+		this.sideC = sideC;
+	}
+
+	@Override
+	public double getArea() {
+		double s = 0.5 * (sideA + sideB + sideC);
+		return Math.pow((s * (s - sideA) * (s - sideB) * (s - sideC)), 0.5);
+	}
+
+	@Override
+	public double getPerimeter() {
+		return sideA + sideB + sideC;
+	}
+}
+
+
+
+
+
+
+public class TestTriangle {
+
+	public static void main(String[] args) {
+		
+		Triangle triangle = new Triangle();
+		triangle.setSideA(5);
+		triangle.setSideB(7);
+		triangle.setSideC(3);
+		triangle.setColor("black");
+		triangle.setFilled(true);
+		System.out.println(triangle.toString());
+		System.out.println("Area is: " + triangle.getArea() + "\nPerimeter is: " + triangle.getPerimeter());
+	}
+}
