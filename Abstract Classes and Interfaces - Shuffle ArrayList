@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+public class Jea {
+
+	public static void main(String[] args) {
+	
+		ArrayList<Number> list = new ArrayList<>();
+		
+		for (int i = 0; i < 10; i++) {
+			list.add(i);
+		}
+		System.out.print("Fixed numbers: " + list);
+		Jea.shuffle(list);
+		System.out.println("\nShuffled numbers: " + list);
+	}
+	
+	 public static void shuffle(ArrayList<Number> list) {
+		 java.util.Collections.shuffle(list);
+	} 
+ }
