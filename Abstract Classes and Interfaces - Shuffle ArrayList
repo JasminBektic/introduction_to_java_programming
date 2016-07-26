@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Jea {
+public class ShuffleArray {
 
 	public static void main(String[] args) {
 	
@@ -10,7 +10,7 @@ public class Jea {
 			list.add(i);
 		}
 		System.out.print("Fixed numbers: " + list);
-		Jea.shuffle(list);
+		ShuffleArray.shuffle(list);
 		System.out.println("\nShuffled numbers: " + list);
 	}
 	
