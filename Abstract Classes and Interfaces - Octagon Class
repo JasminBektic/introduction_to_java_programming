@@ -1,0 +1,102 @@
+public abstract class GeometricObject {
+
+	private String color;
+	private boolean filled;
+	private java.util.Date dateCreated;
+	
+
+	protected GeometricObject() {
+		dateCreated = new java.util.Date();
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public boolean isFilled() {
+		return filled;
+	}
+	
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	
+	public java.util.Date getDateCreated() {
+		return dateCreated;
+	}
+	
+	@Override
+	public String toString() {
+		return "Created on " + dateCreated + "\nColor: " + color + " and filled " + filled;
+	}
+	
+	public abstract double getArea();
+	
+	public abstract double getPerimeter();
+	}
+
+
+
+
+
+public class Octagon extends GeometricObject implements Comparable, Cloneable {
+
+	int side;
+	
+	public Octagon(int side) {
+		this.side = side;
+	}
+	
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	
+	@Override
+	public int compareTo(Object o) {
+		if (getArea() > ((Octagon)o).getArea())
+			return 1;
+		else if (getArea() < ((Octagon)o).getArea())
+			return -1;
+		else
+			return 0;
+	}
+
+	@Override
+	public double getArea() {
+		return (2 + 4 / Math.sqrt(2)) * side * side;
+	}
+
+	@Override
+	public double getPerimeter() {
+		return 8 * side;
+	}
+}
+
+
+
+
+
+public class TestOctagon {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		Octagon octagon1 = new Octagon(5);
+		Octagon octagon2 = (Octagon)octagon1.clone();
+		
+		System.out.println("Area: " + octagon1.getArea());
+		System.out.println("Perimeter: " + octagon1.getPerimeter());
+		switch (octagon1.compareTo(octagon2)) {
+			case -1: System.out.print("Object2 is max");
+				break;
+			case  0: System.out.print("Objects are of the same value");
+				break;
+			case  1: System.out.print("Object1 is max");
+				break;
+		}
+	}
+}
