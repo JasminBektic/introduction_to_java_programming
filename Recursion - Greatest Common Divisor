@@ -1,0 +1,25 @@
+
+import java.util.Scanner;
+
+public class CommonDivisor {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter number one: ");
+		int number1 = input.nextInt();
+		System.out.println("Enter number two: ");
+		int number2 = input.nextInt();
+		input.close();
+
+		System.out.print("Greatest common divisor is: " + gcd(number1, number2));
+	}
+	
+	public static int gcd(int m, int n) {
+		if (m % n == 0) {
+			return n;
+		}
+		else
+			return gcd(n, m % n);
+	}
+}
