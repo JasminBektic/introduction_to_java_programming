@@ -1,0 +1,15 @@
+
+public class Sum {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Rezultat za m(i): " + sum(10));
+	}
+	
+	public static double sum(int i) {
+	    if (i == 0) {
+	        return 0;
+	    }
+	    	return sum(i - 1) + i / (i + 1.0);
+	}
+}
