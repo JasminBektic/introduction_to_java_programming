@@ -1,0 +1,34 @@
+
+public class LargestNumber {
+	
+	public LargestNumber() {
+	}
+
+	public static int findMax(int[] a, int index) {
+	    if (index > 0) {
+	        return Math.max(a[index], findMax(a, index - 1));
+	    } 
+	    else {
+	        return a[0];
+	    }
+	}
+}
+
+
+
+
+import java.util.Scanner;
+public class TestLargestNumber {
+
+	public static void main(String[] args) {
+		int[] array = new int[8];
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter 8 numbers: ");
+		for (int i = 0; i < 8; i++) {
+			array[i] = input.nextInt();
+		}
+		input.close();
+		System.out.println("Max number is: " + LargestNumber.findMax(array, 7));
+	}
+}
