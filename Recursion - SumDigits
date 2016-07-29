@@ -1,0 +1,33 @@
+
+public class SumNumbers {
+	static int sum;
+	
+	public SumNumbers() {
+	}
+	
+	public static int sumDigits(long n) {
+		if (n > 0) {
+			sum += n % 10;
+			return sumDigits(n / 10);
+	}
+		return sum;
+	}
+}
+
+
+
+
+import java.util.Scanner;
+
+public class TestSumNumbers {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter your number: ");
+		long n = input.nextLong();
+		input.close();
+		
+		System.out.println("Sum is: " + SumNumbers.sumDigits(n));
+	}
+}
