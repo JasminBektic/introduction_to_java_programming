@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class DistinctElements {
+	public static void main(String[] args) {
+		
+		ArrayList<String> list = new ArrayList<String>();
+	    list.add("Ned Stark");
+	    list.add("Sansa Stark");
+	    list.add("Ned Stark");
+	    list.add("Robb Stark");
+	    list.add("Robb Stark");
+	    list.add("Sansa Stark");
+	    list.add("Jon Snow");
+
+	    System.out.println("Before method list is: " + list);
+	    System.out.println("after: " + removeDuplicates(list));
+	}
+	
+	public static <E> ArrayList<E> removeDuplicates(ArrayList<E> list) {
+		  ArrayList<E> listRemDup = new ArrayList<E>();
+		    for (E elem : list) {
+		        if (!listRemDup.contains(elem)) {
+		            listRemDup.add(elem);
+		        }
+		    }
+		    return listRemDup;
+	}
+}
