@@ -1,0 +1,27 @@
+
+public class BinSearch {
+
+	public static void main(String[] args) {
+		
+		Integer[] list = {3, 6, 7, 19, 20, 25, 36, 47, 52, 56, 58, 65, 70};
+		System.out.println(binarySearch(list, 70));
+	}
+
+	public static <E extends Comparable<E>> int binarySearch(E[] list, E key){
+		int low = 0;
+		int high = list.length;
+		
+		while (low <= high) {
+			int mid = (low + high) / 2;
+		if (list[mid].compareTo(key) == 0) {
+			return mid;
+		}
+		else if (list[mid].compareTo(key) > 0) {
+			high = mid - 1;
+		}
+		else 
+			low = mid + 1;
+		}
+		return -1;
+	}
+}
