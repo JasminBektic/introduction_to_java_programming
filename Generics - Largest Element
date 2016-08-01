@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class LargestElement {
+
+	public static void main(String[] args) {
+		 ArrayList<Integer> list = new ArrayList<>();
+	        list.add(3);
+	        list.add(12);
+	        list.add(45);
+	        list.add(52);
+	        list.add(36);
+	        list.add(24);
+	        System.out.println(max(list));
+	}
+
+	public static <E extends Comparable<E>> E max(ArrayList<E> list) {
+        E max = list.get(5);
+        
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i).compareTo(max) > 0) {
+                max = list.get(i);
+            }
+        }
+        return max;
+	}
+}
