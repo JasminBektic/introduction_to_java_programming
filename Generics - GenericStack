@@ -1,0 +1,65 @@
+
+public class GenericStack<E> {
+	int[] list = new int[5];
+	int size;
+	
+	public GenericStack() {
+	}
+	
+	public int getSize() {
+		return size;
+	}
+	
+	public int peek() {
+		return list[size - 1];
+	}
+	
+	public void push(E o) {
+		if (size >= list.length) {
+			int[] temp = new int[list.length * 2];
+			System.arraycopy(list, 0, temp, 0, list.length);
+			list = temp;
+		}
+		list[size++] = (int) o;
+	}
+	
+	public int pop() {
+		return list[--size];
+	}
+	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
+	public String toString() {
+		for (int str : list) {
+			System.out.print(str + " ");
+		}
+		return "";
+	}
+}
+
+
+
+
+
+public class TestGenericClass {
+
+	public static void main(String[] args) {
+		
+		GenericStack<Integer> list = new GenericStack<>();
+		list.push(6);
+		list.push(7);
+		list.push(10);
+		list.push(15);
+		list.push(1);
+		list.push(25);
+		
+		System.out.println("Size: " + list.getSize());
+		System.out.println("Empty? " + list.isEmpty());
+		System.out.println("Removed: " + list.pop());
+		System.out.println("Top element: " + list.peek());
+		System.out.print("stack: ");
+		System.out.print(list.toString());
+	}
+}
