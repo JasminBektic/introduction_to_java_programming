@@ -35,7 +35,7 @@ public class Exercise17_14 {
       		while ((num = in.read()) != -1) {
            		out.write(num + 5);
        		}
-       		System.out.println("Encryption done!");
+       		System.out.println("Encryption done!!");
 		in.close();
 		out.close();
 	}
