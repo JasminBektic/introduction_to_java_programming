@@ -32,10 +32,10 @@ public class Exercise17_14 {
 		
 		//Add 5 to every byte
 		int num;
-        while ((num = in.read()) != -1) {
-            out.write(num + 5);
-        }
-        System.out.println("Encryption done!");
+      		while ((num = in.read()) != -1) {
+           		out.write(num + 5);
+       		}
+       		System.out.println("Encryption done!");
 		in.close();
 		out.close();
 	}
