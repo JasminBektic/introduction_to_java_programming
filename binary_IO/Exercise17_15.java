@@ -32,10 +32,10 @@ public class Exercise17_15 {
 		
 		//Subtract 5 from every byte
 		int num;
-        while ((num = in.read()) != -1) {
-        	out.write(num - 5);
-        }
-        System.out.println("Decryption done!");
+       		while ((num = in.read()) != -1) {
+        		out.write(num - 5);
+        	}
+        	System.out.println("Decryption done!");
 		in.close();
 		out.close();
 	}
