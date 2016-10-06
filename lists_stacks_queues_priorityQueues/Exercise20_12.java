@@ -8,7 +8,6 @@ package lists_stacks_queues_priorityQueues;
 	 */
 
 import java.util.Collections;
-
 import helpClasses.MyPriorityQueue20_12;
 
 public class Exercise20_12 {
